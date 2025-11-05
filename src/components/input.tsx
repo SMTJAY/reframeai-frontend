@@ -1,13 +1,5 @@
-import { type ReactNode, useState, useRef, useEffect } from "react";
-
-interface InputProps {
-  type?: string;
-  placeholder?: string;
-  icon?: ReactNode;
-  iconPosition?: "left" | "right";
-  suggestions?: { title: string }[];
-  onComplete?: (value: string) => void; // 👈 new prop
-}
+import { useState, useRef, useEffect } from "react";
+import type { InputProps } from "../utils/interface";
 
 const HomeInput = ({
   type,

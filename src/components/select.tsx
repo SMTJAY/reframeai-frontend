@@ -1,10 +1,4 @@
-interface SelectProps {
-  options?: { label: string; value: string }[];
-  label?: string;
-  placeholder?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-}
+import type { SelectProps } from "../utils/interface";
 
 const HomeSelect = ({
   options = [],

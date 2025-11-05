@@ -2,12 +2,7 @@ import Logo from "../assets/reframelogo.svg";
 import Speaker from "../assets/speaker.svg";
 import HomeButton from "./button";
 import BackArrow from "../assets/backarrow.svg";
-
-interface HeaderProps {
-  step: number;
-  prevStep?: () => void;
-  selectedRole?: string;
-}
+import type { HeaderProps } from "../utils/interface";
 
 const Header = ({ step, prevStep, selectedRole }: HeaderProps) => {
   return (

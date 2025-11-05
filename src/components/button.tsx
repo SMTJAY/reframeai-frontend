@@ -1,7 +1,4 @@
-interface ButtonProps {
-  label: string;
-  onClick?: () => void;
-}
+import type { ButtonProps } from "../utils/interface";
 
 const HomeButton = ({ label, onClick }: ButtonProps) => {
   return (
