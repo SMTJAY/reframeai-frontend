@@ -2,12 +2,12 @@ import HomeButton from "../components/button";
 import QuestionImage from "../assets/grouplaptop.svg";
 
 interface AnswerQuestionProps {
-  nextStep: () => void;
+  nextStep: (targetStep?: number) => void;
 }
 
 const AnswerQuestion = ({ nextStep }: AnswerQuestionProps) => {
   const handleQuestion = () => {
-    nextStep();
+    nextStep(5);
   };
   return (
     <div className="flex justify-center m-auto items-center min-h-screen relative flex-col">
@@ -26,9 +26,12 @@ const AnswerQuestion = ({ nextStep }: AnswerQuestionProps) => {
           When you are done, review your answers and discover insights.
         </p>
 
-        <HomeButton label={"Practice Now"} onClick={handleQuestion} />
+        <HomeButton label={"Practice Now"} onClick={() => nextStep()} />
       </div>
-      <h6 className=" text-[#0088FF] text-[16px] font-semibold underline my-6 cursor-pointer">
+      <h6
+        className=" text-[#0088FF] text-[16px] font-semibold underline my-6 cursor-pointer"
+        onClick={handleQuestion}
+      >
         See All questions
       </h6>
     </div>

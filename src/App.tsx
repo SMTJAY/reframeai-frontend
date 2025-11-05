@@ -4,12 +4,19 @@ import Welcome from "./pages";
 import JobRow from "./pages/job-row";
 import AnswerQuestion from "./pages/anwser-question";
 import WhyChoosen from "./pages/why-choosen";
+import PracticeQuestion from "./pages/practice-question";
 
 const App = () => {
   const [step, setStep] = useState(1);
   const [selectedRole, setSelectedRole] = useState<string>("");
 
-  const nextStep = () => setStep((prev) => prev + 1);
+  const nextStep = (targetStep?: number) => {
+    if (targetStep) {
+      setStep(targetStep);
+    } else {
+      setStep((prev) => prev + 1);
+    }
+  };
   const prevStep = () => setStep((prev) => prev - 1);
 
   return (
@@ -20,7 +27,8 @@ const App = () => {
       )}
       {step === 2 && <JobRow nextStep={nextStep} />}
       {step === 3 && <AnswerQuestion nextStep={nextStep} />}
-      {step === 4 && <WhyChoosen nextStep={nextStep} />}
+      {step === 4 && <WhyChoosen />}
+      {step === 5 && <PracticeQuestion />}
     </div>
   );
 };
